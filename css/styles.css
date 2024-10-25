@@ -35,6 +35,9 @@
 
   /* Gaps */
   --gap-small: 10px;
+
+  /* Margin */
+  --margin-mobile-sides: 40px;
 }
 
 h1,
@@ -66,6 +69,9 @@ body {
   min-height: 100dvh;
   margin: 0px;
   background-color: var(--background-color);
+  min-height: 100dvh;
+  /* display: grid; */
+  /* grid-template-rows: auto 1fr auto; */
   /* background: var(--gradient-23); */
 }
 
@@ -81,6 +87,36 @@ a {
   gap: var(--gap-small);
 }
 
+.dropdown input[type="text"] {
+  min-width: 302px;
+  min-height: 51px;
+  background-color: var(--header-mobile);
+}
+
+.search-field {
+  position: relative;
+}
+
+.search-bar {
+  color: black;
+}
+
+button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  cursor: pointer;
+}
+/* .search-field i {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+} */
+
 /* #sort-by,
 #category {
   min-width: 310px;
@@ -90,7 +126,7 @@ a {
   font-size: var(--mobile-font-small);
 } */
 
-select {
+/* select {
   box-shadow: 0 10px 20px (0, 0, 0, 0);
   font-size: var(--mobile-font-small);
   padding: 1em 1.5em;
@@ -98,7 +134,7 @@ select {
   color: white;
   min-width: 310px;
   min-height: 51px;
-}
+} */
 
 /* Header */
 
@@ -287,7 +323,6 @@ footer {
   overflow-x: auto;
   width: 100%;
   gap: 18px;
-  max-height: 242px;
 }
 
 .store-hero-container::-webkit-scrollbar {
@@ -295,7 +330,8 @@ footer {
 }
 
 .store-hero-img {
-  object-fit: fill;
+  object-fit: contain;
+  width: 430px;
 }
 
 .select-console-mobile {
@@ -439,4 +475,75 @@ footer {
   line-height: 2;
   border: 1px solid #ddd;
   border-radius: 0.25em;
+}
+
+/* Checkout page */
+
+.checkout-form-container {
+  display: flex;
+  flex-direction: column;
+  margin: var(--margin-mobile-sides);
+  background-color: var(--background-color);
+  opacity: 0.85;
+  gap: var(--gap-small);
+}
+
+.form-mobile-icons {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout-form-container label {
+  color: white;
+  text-align: center;
+}
+
+.checkout-form-container input,
+.checkout-form-container select {
+  min-height: 40px;
+  border-radius: 5px;
+  border: solid 1px black;
+  margin: 1px;
+  padding: 1px;
+  box-shadow: var(--inner-shadow-1);
+  background-color: white;
+  color: black;
+  font-size: var(--mobile-font-small);
+}
+
+::placeholder {
+  color: black;
+  font-size: var(--mobile-font-small);
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & div {
+    display: flex;
+  }
+}
+
+.form-column-date {
+  display: flex;
+  flex-direction: column;
+  & input {
+    width: 50px;
+  }
+}
+
+.form-column--security {
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+}
+
+.form-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
